@@ -1,0 +1,7 @@
+{
+  "phishing-amount": 1,
+  "phishing-user": "admin",
+  "phishing-domain-mappings": [
+    "",
+  ]
+}

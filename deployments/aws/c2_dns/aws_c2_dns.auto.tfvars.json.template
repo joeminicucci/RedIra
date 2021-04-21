@@ -1,0 +1,9 @@
+{
+  "dns-c2-amount": 1,
+  "dns-c2-user": "admin",
+  "dns-c2-domain-mappings": [
+    "",
+  ],
+  "cs-license": "",
+  "dns-c2-profile": ""
+}

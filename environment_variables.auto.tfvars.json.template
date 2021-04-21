@@ -1,0 +1,7 @@
+{
+    "vpc_id" : "",
+    "public_subnet_id" : "",
+    "private_subnet_id" : "",
+    "base-internal-security_groups" : [""],
+    "base-public-security_groups" : [""]
+}

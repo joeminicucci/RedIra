@@ -1,0 +1,37 @@
+#Gophish Phishing Server Deployment
+- hosts: all
+  gather_facts: yes
+  check_mode: no
+  become: True
+  tasks:
+    - name : "Deploy Gophish Server"
+      include_role:
+        name: gophish
+      vars:
+        gophish_config_template_source: "{{ playbook_dir}}/../templates/gophish_templates/config.json.j2"
+        gophish_service_template_source: "{{ playbook_dir }}/../templates/gophish_templates/gophish.service.j2"
+        gophish_service_log_directory: "{{ gophish_install_destination }}/log"
+      register: gophish_deploy
+
+- hosts: localhost
+  gather_facts: yes
+  check_mode: no
+  become: True
+  tasks:
+    - debug:
+        msg="{{ hostvars[hostvars.keys()|list|first]['gophish_log'].stdout }}"
+    - name: "Extract Gophish Credentials to disk"
+      check_mode: no
+      become: True
+      shell:
+        cmd: |
+          grep -oiP 'username[[:blank:]][A-Za-z0-9]+' <<< "{{ hostvars[hostvars.keys()|list|first]['gophish_log'].stdout }}" | cut -d ' ' -f2 > ../credentials/gophish_username_{{ hostvars.keys()|list|first }}
+          grep -oiP 'password[[:blank:]][A-Za-z0-9]+' <<< "{{ hostvars[hostvars.keys()|list|first]['gophish_log'].stdout }}" | cut -d ' ' -f2 >> ../credentials/gophish_password_{{ hostvars.keys()|list|first }}
+      args:
+        executable: /bin/bash
+      retries: 2
+      delay: 5
+      changed_when: False
+      ignore_errors: yes
+      register: gophish_credz
+      until: hostvars[hostvars.keys()|list|first]['gophish_log'].stdout | length > -1

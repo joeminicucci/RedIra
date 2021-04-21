@@ -1,0 +1,20 @@
+- name: Core Configuration
+  hosts: all
+  tasks:
+
+    - name: Install core deps
+      apt:
+        name:
+          - curl
+          - tmux
+          - git
+          - dirmngr
+          - debconf-utils
+          - wget
+          - build-essential
+          - vim
+          - gcc
+        update_cache: yes
+        state: latest
+      become: yes
+      tags: update

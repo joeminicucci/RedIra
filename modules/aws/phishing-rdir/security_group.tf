@@ -1,0 +1,33 @@
+resource "aws_security_group" "phishing-rdir" {
+  tags = {
+    Name = "red-team-phishing-rdir-${random_id.server.hex}"
+  }
+  name = "red-team-phishing-rdir-${random_id.server.hex}"
+  description = "Red Team Infra - Gophish HTTP C2 Redirector"
+  vpc_id = var.vpc_id
+
+  ingress {
+    from_port = 443
+    to_port = 443
+    protocol = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+  egress {
+    from_port = 53
+    to_port = 53
+    protocol = "udp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+  egress {
+    from_port = 80
+    to_port = 80
+    protocol = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+  egress {
+    from_port = 443
+    to_port = 443
+    protocol = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+}

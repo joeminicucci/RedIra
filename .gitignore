@@ -1,0 +1,8 @@
+/.idea/*
+terraform.tfvars.json
+deployments/aws/c2_dns/*.auto.tfvars.json
+deployments/aws/c2_http/*.auto.tfvars.json
+deployments/aws/phishing/*.auto.tfvars.json
+deployments/aws/complete/*.auto.tfvars.json
+modules/aws/create-hosted-zone/
+modules/aws/create-vpc/

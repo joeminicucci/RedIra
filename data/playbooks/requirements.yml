@@ -1,0 +1,12 @@
+# Install a role from GitHub
+roles:
+  - name: gophish
+    #dev
+    src: git+https://github.com/TUVOpenSky-THREATS/ansible-role-gophish.git
+    version: dev
+    #switch back to https://github.com/justin-p/ansible-role-gophish when PR is complete
+
+  - name: joeminicucci.cobalt_strike
+    src: git+https://github.com/joeminicucci/ansible-role-cobalt-strike.git
+#for development branch
+#    version: dev

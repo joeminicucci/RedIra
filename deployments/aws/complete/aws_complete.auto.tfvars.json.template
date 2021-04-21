@@ -1,0 +1,24 @@
+{
+  "http-c2-amount": 1,
+  "http-c2-user": "admin",
+  "http-c2-domain-mappings": [
+    "",
+  ],
+  "http-c2-profile": "",
+
+
+  "dns-c2-amount": 1,
+  "dns-c2-user": "admin",
+  "dns-c2-domain-mappings": [
+    "",
+  ],
+  "dns-c2-profile": "",
+
+  "cs_license": "",
+
+  "phishing-amount": 1,
+  "phishing-user": "admin",
+  "phishing-domain-mappings": [
+    "",
+  ]
+}

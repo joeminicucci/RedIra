@@ -1,0 +1,9 @@
+{
+  "http-c2-amount": 1,
+  "http-c2-user": "admin",
+  "http-c2-domain-mappings": [
+    "",
+  ],
+  "cs-license": "",
+  "http-c2-profile": ""
+}
