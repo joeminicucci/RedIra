@@ -1,5 +1,5 @@
 # Red Ira
-Red Ira is an cloud automation system scheme for Red Teams, built on the work done in [Red Baron](https://github.com/Coalfire-Research/Red-Baron). It currently supports AWS only.
+Red Ira is an cloud automation system scheme for Red Teams, built on the work done in [Red Baron](https://github.com/Coalfire-Research/Red-Baron). It currently supports AWS only. The accompanying blog post can be [found here](https://blog.joeminicucci.com/2021/redira).
  
 ## Design Philosophy
  The design philosophy differs from Red Baron in the following :
